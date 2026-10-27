@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--to inject a depencdency in ean ref attriute of property tag is used and the value of ref is the name of the bean and it is known as explicitly bean injection--> 
+<!--or ref keyword is used to explicitly bean injection -->
+	
+	<!-- Inventory Bean -->
+	<!-- <bean id="inventory" class="com.rays.ioc.Inventory">
+		<property name="stock" value="10"></property>
+	</bean>
+	
+	Payment Bean
+	<bean id="payment" class="com.rays.ioc.Payment">
+		<property name="balance" value="500"></property>
+	</bean>
+	
+	Order Bean 
+	<bean id="order" class="com.rays.ioc.Order">
+		<property name="inventory" ref="inventory"></property>
+		<property name="payment" ref="payment"></property>
+	</bean> -->
+	
+	 <bean id="inventory" class="com.rays.ioc.Inventory">
+		<constructor-arg value="10"></constructor-arg>
+	</bean>
+	
+	<!--  Payment Bean-->
+	<bean id="payment" class="com.rays.ioc.Payment">
+		<constructor-arg value="500"></constructor-arg>
+	</bean>
+	
+	<!--  Order Bean -->
+	<bean id="order" class="com.rays.ioc.Order">
+		<constructor-arg ref="inventory"></constructor-arg>
+		<constructor-arg ref="payment"></constructor-arg>
+	</bean>
+</beans>

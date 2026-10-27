@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!--it is used when we use setter method  -->
+	<!-- Person person = new Person(); -->
+	<bean id="person" class="com.rays.test.Person">
+		<property name="name" value="Ram"></property>
+		<property name="address" value="Indore"></property>
+	</bean>
+	
+	
+	<!--it is used when parameteraized constructor is used to set values of property -->
+	<!-- Person person = new Person("Ram","Indore"); -->
+	<bean id="person" class="com.rays.test.Person">
+		<constructor-arg value="Ram"></constructor-arg>
+		<constructor-arg value="Indore"></constructor-arg>
+	</bean>
+<!--Auto wiring means implicitly ean injection   -->
+<!--By name ,By type, By constructor  -->
+</beans>
