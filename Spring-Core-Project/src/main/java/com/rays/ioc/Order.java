@@ -1,30 +1,33 @@
 package com.rays.ioc;
 
+
 public class Order {
 
 	private Inventory inventory;
+	
+	
 	private Payment payment;
 
 	public Inventory getInventory() {
 		return inventory;
 	}
 	
-	public Order(Inventory inventory,Payment payment) {
-		this.inventory=inventory;
-		this.payment=payment;
-	}
-
-//	public void setInventory(Inventory inventory) {
-//		this.inventory = inventory;
+//	public Order(Inventory inventory,Payment payment) {
+//		this.inventory=inventory;
+//		this.payment=payment;
 //	}
+
+	public void setInventory(Inventory inventory) {
+		this.inventory = inventory;
+	}
 
 	public Payment getPayment() {
 		return payment;
 	}
 
-//	public void setPayment(Payment payment) {
-//		this.payment = payment;
-//	}
+	public void setPayment(Payment payment) {
+		this.payment = payment;
+	}
 
 	public void placedOrder(int item) {
 
